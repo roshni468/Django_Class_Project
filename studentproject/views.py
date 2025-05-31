@@ -1,0 +1,72 @@
+from django.shortcuts import render ,redirect
+
+from myapp.models import*
+def homepage(req):
+    return render(req,"home.html")
+def addstudent(req):
+    if req.method=='POST':
+        s_name=req.POST.get("studentName"),
+        d_name=req.POST.get("departmentName"),
+        c_name=req.POST.get("city"),
+        age=req.POST.get("age"),
+    
+    student=student_from(
+      name=s_name,
+      department_name=d_name,
+      city_name=c_name,
+       age= age,
+
+    )
+    student.save()
+    return redirect("list")
+
+ 
+
+
+
+def addstudent(req):
+    
+    return render(req,"addstudent.html")
+  
+ 
+
+def list(req):
+    s_list=student_from.objects.all()
+    context={
+        'data': s_list
+    }
+    
+    return render(req,"studentlist.html",context)
+
+
+
+def addtecher(req):
+    if req.method=='POST':
+        s_name=req.POST.get("id_number"),
+        d_name=req.POST.get("tacher_name"),
+        c_name=req.POST.get("city"),
+        age=req.POST.get("age"),
+    
+    student=student_from(
+      id_number=s_name,
+      tacher_name=d_name,
+      city_name=c_name,
+      age= age,
+
+    )
+    student.save()
+    return redirect("techerlist")
+
+
+def addtecher(req):
+    
+    return render(req,"addtecher.html")
+
+
+def techerlist(req):
+    s_list=tacher_model.objects.all()
+    context={
+        'data': s_list
+    }
+    
+    return render(req,"techerlist.html",context)
