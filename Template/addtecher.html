@@ -52,16 +52,16 @@
   </style>
 
   <div class="form-box">
-    <h1>student from</h1>
-    <h2><a href={% url 'list'%}>Student list</a></h2>
+    <h1>TEACHER FROM</h1>
+    <h2><a href={% url 'techerlist' %}>Teacher_list</a></h2>
     <form action="" method="POST">
         
      {% csrf_token %}
 
-      <label for="studentName">teacher_name:</label>
+      <label for="studentName">id_number</label>
       <input type="text" id="studentName" name="id_number" required>
 
-      <label for="departmentName">Department Name:</label>
+      <label for="departmentName">techer Name:</label>
       <input type="text" id="departmentName" name="tacher_name" required>
 
       <label for="city">City:</label>

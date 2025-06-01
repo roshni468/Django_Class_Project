@@ -35,32 +35,31 @@
     }
   </style>
 
-  <h2 style="text-align:center;">TEACHER list</h2>
+  <h2 style="text-align:center;">COURSE_LIST</h2>
 
   <table>
     <thead>
       <tr>
-        <th>Name</th>
-        <th>teacher_name</th>
-        <th>city</th>
-        <th>age</th>
+        <th>COURSE NAME</th>
+        <th>COURSE ID</th>
+        <th>DETAILS</th>
+        <th>FEE</th>
         <th>action</th>
       </tr>
     </thead>
     <tbody>
      {% for i in data %}
       <tr>
-        <td>{{i.id_number}}</td>
-        <td>{{i.tacher_name }}</td>
-        <td>{{i.city_name}}</td>
-         <td>{{i.age}}</td>
+        <td>{{i.CSE }}</td>
+        <td>{{i.BBA}}</td>
+        <td>{{i.MATH}}</td>
+         <td>{{i.english}}</td>
         
-        <td>
-          <a href="">edit</a>
-           <a href="{% url 'deletteacher' i.id %}" class="delate">delete</a>
-            <a href="">viwe</a>
       
-      
+      <td>
+        <a href=""></a>
+        <a href="{% url 'deletcourses' i.id %}" class="delate">delate</a>
+        <a href=""></a>
 
       
       </tr>

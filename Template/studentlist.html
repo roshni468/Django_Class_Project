@@ -44,6 +44,7 @@
         <th>departmentName</th>
         <th>city</th>
         <th>age</th>
+        <th>action</th>
       </tr>
     </thead>
     <tbody>
@@ -53,6 +54,13 @@
         <td>{{i.department_name }}</td>
         <td>{{i.city_name}}</td>
          <td>{{i.age}}</td>
+         
+
+         <td>
+          <a href="">edit</a>
+          <a href="{% url 'deletstudent' i.id %}" class="delate">delate</a>
+          <a href="">view</a>
+         </td>
         
       
       

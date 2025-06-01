@@ -24,7 +24,14 @@ urlpatterns = [
     path('addstudent/',addstudent,name="addstudent"),
     path('list/',list,name="list"),
     path('add_tech/',addtecher,name="addtecher"),
-    path('tech_list/',techerlist,name="techerlist")
+    path('tech_list/',techerlist,name="techerlist"),
+    path('course/',addcourse,name="addcourse"),
+    path('course_list/',course_list,name="course_list"),
+    path('deletstudent/<str:myid>',deletstudent,name="deletstudent"),
+    path('deletteacher/<str:myid>',deletteacher,name="deletteacher"),
+    path('deletcourse/<str:myid>',deletcourse,name="deletcourses"),
+    
+
 
 
 ]

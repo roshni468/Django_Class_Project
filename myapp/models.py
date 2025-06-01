@@ -14,3 +14,13 @@ class tacher_model(models.Model):
     tacher_name=models.CharField(max_length=100)
     city_name=models.CharField(max_length=100)
     age=models.IntegerField()
+
+
+
+
+
+class course_model(models.Model):
+    CSE =models.CharField(max_length=100)
+    BBA=models.IntegerField()
+    MATH=models.TextField()
+    english=models.IntegerField()
