@@ -22,8 +22,29 @@ def addstudent(req):
 
     
     return render(req,"addstudent.html")
-  
- 
+
+def editstudent(req,myid):
+    student=student_from.objects.get(id=myid)
+    context={
+        'data':student
+    }
+    if req.method=='POST':
+        s_name=req.POST.get("studentName")
+        d_name=req.POST.get("departmentName")
+        c_name=req.POST.get("city")
+        age=req.POST.get('age')
+    
+        student=student_from(
+            id=myid,
+            name=s_name,
+            department_name=d_name,
+            city_name=c_name,
+            age= age,
+
+        )
+        student.save()
+        return redirect("list")
+    return render(req,"editstuent.html",context)
 
 def list(req):
     s_list=student_from.objects.all()
@@ -112,3 +133,30 @@ def deletcourse(req,myid):
 
     Teacher.delete()
     return redirect("course_list")
+
+
+def editcourse(req,myid):
+    Teacher=course_model.objects.get(id=myid)
+
+    context={
+        'data':Teacher
+    }
+    if req.method=='POST':
+        s_name=req.POST.get("CSE")
+        d_name=req.POST.get("math")
+        c_name=req.POST.get("details")
+        age=req.POST.get("fee")
+    
+        student=course_model(
+            id=myid,
+            CSE=s_name,
+            BBA=d_name,
+            MATH=c_name,
+            english= age,
+
+        )
+        student.save()
+        return redirect("course_list")
+
+   
+    return render(req,"edit.html",context)

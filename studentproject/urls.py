@@ -30,6 +30,10 @@ urlpatterns = [
     path('deletstudent/<str:myid>',deletstudent,name="deletstudent"),
     path('deletteacher/<str:myid>',deletteacher,name="deletteacher"),
     path('deletcourse/<str:myid>',deletcourse,name="deletcourses"),
+    path('editcourse/<str:myid>',editcourse,name="editcourses"),
+    path('edit_file/<str:myid>',editcourse,name="editcourses"),
+    path('edit_student/<str:myid>',editstudent,name="editstudent"),
+
     
 
 
